@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+
 # testing
 /coverage
 
@@ -16,10 +17,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/src/javascript_practise.js
-/src/objects.js
-/src/this.js
-/src/class.js
 
 npm-debug.log*
 yarn-debug.log*
