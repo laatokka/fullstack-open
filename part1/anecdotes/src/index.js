@@ -20,7 +20,7 @@ const App = ({ anecdotes }) => {
   const indexAnecdoteWithMostVotes = () => {
     const copy = [...votes];
     let largest = 0;
-
+    
     for (let i = 0; i < copy.length; i++) {
       if (copy[i] > copy[largest]) {
         largest = i
