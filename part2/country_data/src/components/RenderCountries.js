@@ -9,13 +9,13 @@ const RenderCountries = ({ countries, filter }) => {
         )
     } else if (countriesToRender.length > 1) {
         return (
-            countriesToRender.map(c => <Country key={c.name} name={c.name} />
+            countriesToRender.map(c => <Country key={c.name} name={c.name} capital={c.capital} languages={c.languages} flag={c.flag} population={c.population} length={10} />
             )
         )
     }
     else if (countriesToRender.length === 1) {
         return (
-            countriesToRender.map(c => <Country key={c.name} name={c.name} capital={c.capital} languages={c.languages} flag={c.flag} population={c.population} />)
+            countriesToRender.map(c => <Country key={c.name} name={c.name} capital={c.capital} languages={c.languages} flag={c.flag} population={c.population} length={1} />)
         )
     }
 
