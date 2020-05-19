@@ -4,11 +4,13 @@ import Filter from './components/Filter'
 
 import axios from 'axios'
 
+require('dotenv').config()
+
 const App = () => {
   const [countries, setCountries] = useState([])
   const [filter, setFilter] = useState('')
 
-  const hook = () => {
+  const countriesHook = () => {
     axios
       .get('https://restcountries.eu/rest/v2/all')
       .then(res => {
@@ -16,8 +18,7 @@ const App = () => {
       })
   }
 
-  useEffect(hook, [])
-  console.log(countries)
+  useEffect(countriesHook, [])
 
   const handleFilter = (event) => {
     setFilter(event.target.value)
