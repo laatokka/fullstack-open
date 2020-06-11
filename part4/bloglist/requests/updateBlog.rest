@@ -1,0 +1,8 @@
+PUT http://localhost:3003/api/blogs/5ede117355b6bbca486096ae
+
+{
+    "title":"ALTERED WARNING, WARNING!!",
+    "author":"Hacker De lauge",
+    "url":"www.pwnd.coopa-troopa.com",
+    "likes":"1337"
+}

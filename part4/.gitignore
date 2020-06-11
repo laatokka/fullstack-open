@@ -1,0 +1,5 @@
+part3-notes-backend
+bloglist/node_modules
+bloglist/.env
+bloglist/testing.js
+bloglist/tests/palindrome.test.js
