@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import React from 'react'
 
 import { voteCreator } from '../reducers/anecdoteReducer'
-import { showNotification, hideNotification } from '../reducers/notificationReducer'
+import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = () => {
   const state = useSelector(state => state)
@@ -14,7 +14,6 @@ const AnecdoteList = () => {
 
   const vote = (id) => {
     const voteAnecdote = state.anecdotes.find(anecdote => anecdote.id === id)
-    voteAnecdote.votes += 1
 
     lastVote = voteAnecdote.content
 
@@ -24,16 +23,11 @@ const AnecdoteList = () => {
       type: 'SORT'
     })
 
-    dispatch(showNotification('You voted for ' + String(lastVote)))
-
-    setTimeout(() => {
-      dispatch(hideNotification(null))
-    }, 5000);
+    dispatch(setNotification('You voted for ' + String(lastVote), 5))
   }
 
   const filteredAnecdotes = state.anecdotes.filter(anecdote => String(anecdote.content).toLowerCase().includes(filter))
 
-  console.log(state.anecdotes)
   if (filter === '') {
     return (
       <div>
@@ -56,7 +50,7 @@ const AnecdoteList = () => {
         {filteredAnecdotes.map(anecdote =>
           <div key={anecdote.id}>
             <div>
-               {anecdote.content}
+              {anecdote.content}
             </div>
             <div>
               has {anecdote.votes}
@@ -68,5 +62,5 @@ const AnecdoteList = () => {
     )
   }
 }
-  export default AnecdoteList
+export default AnecdoteList
 
